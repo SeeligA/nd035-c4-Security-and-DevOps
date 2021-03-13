@@ -19,3 +19,8 @@
 2021-03-13 16:05:27,613 INFO c.e.d.c.UserController [main] Creating user test
 2021-03-13 16:05:27,615 INFO c.e.d.c.UserController [main] Value of username is 
 2021-03-13 16:05:27,615 ERROR c.e.d.c.UserController [main] Error with password. Cannot create user test!
+2021-03-13 16:45:22,490 INFO c.e.d.c.UserController [main] Creating user test
+2021-03-13 16:45:22,504 INFO c.e.d.c.UserController [main] Value of username is 
+2021-03-13 16:45:22,508 INFO c.e.d.c.UserController [main] Creating user test
+2021-03-13 16:45:22,509 INFO c.e.d.c.UserController [main] Value of username is 
+2021-03-13 16:45:22,510 ERROR c.e.d.c.UserController [main] Error with password. Cannot create user test!

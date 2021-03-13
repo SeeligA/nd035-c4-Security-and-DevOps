@@ -109,8 +109,9 @@ public class CartControllerTest {
         assertEquals(404, noItem.getStatusCodeValue());
     }
 
-    @Ignore
+
     @Test
+    @Ignore
     public void verify_that_item_number_and_total_not_negative() {
         ModifyCartRequest request = new ModifyCartRequest();
         request.setItemId(1L);

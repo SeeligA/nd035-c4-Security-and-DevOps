@@ -50,6 +50,7 @@ public class UserController {
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
 		Cart cart = new Cart();
+		log.info("Value of username is ", createUserRequest.getUsername());
 		cartRepository.save(cart);
 		user.setCart(cart);
 

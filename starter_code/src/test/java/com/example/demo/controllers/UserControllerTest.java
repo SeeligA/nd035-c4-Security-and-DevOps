@@ -16,6 +16,7 @@ import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -55,6 +56,22 @@ public class UserControllerTest {
         assertEquals(0, user.getId());
         assertEquals("test", user.getUsername());
         assertEquals("thisIsHashed", user.getPassword());
+    }
+
+    @Test
+    public void testCreateUser_passwordFail() throws Exception {
+        when(encoder.encode("pw")).thenReturn("thisIsHashed");
+        CreateUserRequest request = new CreateUserRequest();
+        request.setUsername("test");
+        request.setPassword("pw");
+        request.setConfirmPassword("pw");
+
+        ResponseEntity<User> response = userController.createUser(request);
+
+        assertNotNull(response);
+        assertEquals(400, response.getStatusCodeValue());
+        User user = response.getBody();
+        assertNull(user);
     }
 
     @Test

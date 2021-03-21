@@ -35,11 +35,9 @@ node {
 
 	      echo "Docker Image Tag Name: ${dockerImageTag}"
 
-		  sh "docker stop auth-course"
+		  sh "docker stop auth-course || true"
 
-		  sh "docker rm auth-course"
-
-		  sh "docker run --name auth-course -d -p 8888:8888 auth-course:${env.BUILD_NUMBER}"
+		  sh "docker run --name auth-course --rm -d -p 8888:8888 auth-course:${env.BUILD_NUMBER}"
 
 		  // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
 	      //    dockerImage.push("${env.BUILD_NUMBER}")

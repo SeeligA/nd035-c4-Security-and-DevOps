@@ -1,0 +1,213 @@
+Started by user Bam Bam
+Obtained Jenkinsfile from git https://github.com/SeeligA/nd035-c4-Security-and-DevOps
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/ecommerce-java-maven-app
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] stage
+[Pipeline] { (Clone Repo)
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/SeeligA/nd035-c4-Security-and-DevOps.git # timeout=10
+Fetching upstream changes from https://github.com/SeeligA/nd035-c4-Security-and-DevOps.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.26.3'
+ > git fetch --tags --force --progress -- https://github.com/SeeligA/nd035-c4-Security-and-DevOps.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 11a97cec4b2fcac8ebc2c044a6482e314023268f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 11a97cec4b2fcac8ebc2c044a6482e314023268f # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 11a97cec4b2fcac8ebc2c044a6482e314023268f # timeout=10
+Commit message: "Update Listening port"
+ > git rev-list --no-walk 108f4841c738b58848667d590dd241aaaef2fd2f # timeout=10
+[Pipeline] tool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Project)
+[Pipeline] sh
++ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3.5.2/bin/mvn clean install
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building auth-course 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ auth-course ---
+[INFO] Deleting /var/jenkins_home/workspace/ecommerce-java-maven-app/target
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 20 source files to /var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ auth-course ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/ecommerce-java-maven-app/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ auth-course ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /var/jenkins_home/workspace/ecommerce-java-maven-app/target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ auth-course ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.demo.controllers.CartControllerTest
+2021-03-21 21:42:34,359 main DEBUG Apache Log4j Core 2.11.2 initializing configuration XmlConfiguration[location=/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml]
+2021-03-21 21:42:34,374 main DEBUG Installed 1 script engine
+2021-03-21 21:42:35,047 main DEBUG Oracle Nashorn version: 1.8.0_282, language: ECMAScript, threading: Not Thread Safe, compile: true, names: [nashorn, Nashorn, js, JS, JavaScript, javascript, ECMAScript, ecmascript], factory class: jdk.nashorn.api.scripting.NashornScriptEngineFactory
+2021-03-21 21:42:35,049 main DEBUG PluginManager 'Core' found 117 plugins
+2021-03-21 21:42:35,050 main DEBUG PluginManager 'Level' found 0 plugins
+2021-03-21 21:42:35,061 main DEBUG PluginManager 'Lookup' found 13 plugins
+2021-03-21 21:42:35,064 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2021-03-21 21:42:35,085 main DEBUG PluginManager 'TypeConverter' found 26 plugins
+2021-03-21 21:42:35,116 main DEBUG PatternLayout$Builder(pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n", PatternSelector=null, Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2021-03-21 21:42:35,120 main DEBUG PluginManager 'Converter' found 47 plugins
+2021-03-21 21:42:35,122 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+2021-03-21 21:42:35,142 main DEBUG ConsoleAppender$Builder(target="SYSTEM_OUT", follow="null", direct="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n), name="LogToConsole", Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Filter=null, ={})
+2021-03-21 21:42:35,148 main DEBUG Starting OutputStreamManager SYSTEM_OUT.false.false
+2021-03-21 21:42:35,149 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2021-03-21 21:42:35,150 main DEBUG PatternLayout$Builder(pattern="%d %p %c{1.} [%t] %m%n", PatternSelector=null, Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2021-03-21 21:42:35,178 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.FileAppender].
+2021-03-21 21:42:35,195 main DEBUG FileAppender$Builder(fileName="logs/app.log", append="null", locking="null", advertise="null", advertiseUri="null", createOnDemand="null", filePermissions="null", fileOwner="null", fileGroup="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout(%d %p %c{1.} [%t] %m%n), name="LogToFile", Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Filter=null, ={})
+2021-03-21 21:42:35,198 main DEBUG Starting FileManager logs/app.log
+2021-03-21 21:42:35,200 main DEBUG Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+2021-03-21 21:42:35,207 main DEBUG createAppenders(={LogToConsole, LogToFile})
+2021-03-21 21:42:35,207 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2021-03-21 21:42:35,212 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2021-03-21 21:42:35,213 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2021-03-21 21:42:35,213 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2021-03-21 21:42:35,216 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2021-03-21 21:42:35,222 main DEBUG createLogger(additivity="false", level="DEBUG", name="com.example.demo", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Filter=null)
+2021-03-21 21:42:35,231 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2021-03-21 21:42:35,232 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2021-03-21 21:42:35,235 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2021-03-21 21:42:35,237 main DEBUG createLogger(additivity="false", level="ERROR", name="org.springframework.boot", includeLocation="null", ={LogToConsole}, ={}, Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Filter=null)
+2021-03-21 21:42:35,238 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2021-03-21 21:42:35,245 main DEBUG createAppenderRef(ref="LogToFile", level="null", Filter=null)
+2021-03-21 21:42:35,247 main DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2021-03-21 21:42:35,249 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2021-03-21 21:42:35,249 main DEBUG Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+2021-03-21 21:42:35,251 main DEBUG createLogger(additivity="null", level="ERROR", includeLocation="null", ={LogToFile, LogToConsole}, ={}, Configuration(/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml), Filter=null)
+2021-03-21 21:42:35,256 main DEBUG Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+2021-03-21 21:42:35,265 main DEBUG createLoggers(={com.example.demo, org.springframework.boot, root})
+2021-03-21 21:42:35,267 main DEBUG Configuration XmlConfiguration[location=/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml] initialized
+2021-03-21 21:42:35,271 main DEBUG Starting configuration XmlConfiguration[location=/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml]
+2021-03-21 21:42:35,272 main DEBUG Started configuration XmlConfiguration[location=/var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml] OK.
+2021-03-21 21:42:35,273 main DEBUG Shutting down OutputStreamManager SYSTEM_OUT.false.false-1
+2021-03-21 21:42:35,273 main DEBUG Shut down OutputStreamManager SYSTEM_OUT.false.false-1, all resources released: true
+2021-03-21 21:42:35,274 main DEBUG Appender DefaultConsole-1 stopped with status true
+2021-03-21 21:42:35,274 main DEBUG Stopped org.apache.logging.log4j.core.config.DefaultConfiguration@6f3187b0 OK
+2021-03-21 21:42:35,429 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69
+2021-03-21 21:42:35,431 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=StatusLogger
+2021-03-21 21:42:35,433 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=ContextSelector
+2021-03-21 21:42:35,441 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=Loggers,name=org.springframework.boot
+2021-03-21 21:42:35,444 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=Loggers,name=
+2021-03-21 21:42:35,444 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=Loggers,name=com.example.demo
+2021-03-21 21:42:35,449 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=Appenders,name=LogToConsole
+2021-03-21 21:42:35,450 main DEBUG Registering MBean org.apache.logging.log4j2:type=3d4eac69,component=Appenders,name=LogToFile
+2021-03-21 21:42:35,459 main DEBUG org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.
+2021-03-21 21:42:35,459 main DEBUG Reconfiguration complete for context[name=3d4eac69] at URI /var/jenkins_home/workspace/ecommerce-java-maven-app/target/classes/log4j2.xml (org.apache.logging.log4j.core.LoggerContext@172ca72b) with optional ClassLoader: null
+2021-03-21 21:42:35,464 main DEBUG Shutdown hook enabled. Registering a new one.
+2021-03-21 21:42:35,465 main DEBUG LoggerContext[name=3d4eac69, org.apache.logging.log4j.core.LoggerContext@172ca72b] started OK.
+21:42:35.572 [main] INFO  com.example.demo.controllers.OrderController - Item (Id:1) removed.
+2021-03-21 21:42:35,582 main DEBUG AsyncLogger.ThreadNameStrategy=UNCACHED (user specified null, default is UNCACHED)
+2021-03-21 21:42:35,588 main DEBUG org.apache.logging.log4j.core.util.SystemClock does not support precise timestamps.
+21:42:35.590 [main] WARN  com.example.demo.controllers.OrderController - No matching user found. No item was removed.
+21:42:35.592 [main] WARN  com.example.demo.controllers.OrderController - Item with Id 0 not found. No item was removed.
+21:42:35.596 [main] WARN  com.example.demo.controllers.OrderController - No matching user found. No item was removed.
+21:42:35.598 [main] WARN  com.example.demo.controllers.OrderController - Item (Id:0) not found. No item was added.
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 3.091 sec - in com.example.demo.controllers.CartControllerTest
+Running com.example.demo.controllers.OrderControllerTest
+21:42:35.796 [main] INFO  com.example.demo.controllers.OrderController - Submitting order...
+21:42:35.797 [main] INFO  com.example.demo.controllers.OrderController - SUCCESS! New order submitted.
+21:42:35.798 [main] INFO  com.example.demo.controllers.OrderController - Submitting order...
+21:42:35.798 [main] WARN  com.example.demo.controllers.OrderController - No matching user found. Submission cancelled.
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 sec - in com.example.demo.controllers.OrderControllerTest
+Running com.example.demo.controllers.ItemControllerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.example.demo.controllers.ItemControllerTest
+Running com.example.demo.controllers.UserControllerTest
+21:42:35.914 [main] INFO  com.example.demo.controllers.UserController - Creating user test...
+21:42:35.915 [main] ERROR com.example.demo.controllers.UserController - Error with password. Cannot create user test!
+21:42:35.932 [main] INFO  com.example.demo.controllers.UserController - Creating user test...
+21:42:35.936 [main] INFO  com.example.demo.controllers.UserController - SUCCESS! New user created
+21:42:35.941 [main] INFO  com.example.demo.controllers.UserController - Creating user test...
+21:42:35.941 [main] ERROR com.example.demo.controllers.UserController - Error with password. Cannot create user test!
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec - in com.example.demo.controllers.UserControllerTest
+
+Results :
+
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ auth-course ---
+[INFO] Building jar: /var/jenkins_home/workspace/ecommerce-java-maven-app/target/auth-course-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO] --- spring-boot-maven-plugin:2.1.5.RELEASE:repackage (repackage) @ auth-course ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ auth-course ---
+[INFO] Installing /var/jenkins_home/workspace/ecommerce-java-maven-app/target/auth-course-0.0.1-SNAPSHOT.jar to /root/.m2/repository/com/example/auth-course/0.0.1-SNAPSHOT/auth-course-0.0.1-SNAPSHOT.jar
+[INFO] Installing /var/jenkins_home/workspace/ecommerce-java-maven-app/pom.xml to /root/.m2/repository/com/example/auth-course/0.0.1-SNAPSHOT/auth-course-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.788 s
+[INFO] Finished at: 2021-03-21T21:42:38Z
+[INFO] Final Memory: 41M/163M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Docker Image)
+[Pipeline] isUnix
+[Pipeline] sh
++ docker build -t auth-course:12 .
+Sending build context to Docker daemon  48.36MB
+
+Step 1/4 : FROM openjdk:8-jdk-alpine
+ ---> a3562aa0b991
+Step 2/4 : VOLUME /tmp
+ ---> Using cache
+ ---> 05d498a3f5da
+Step 3/4 : ADD target/auth-course-0.0.1-SNAPSHOT.jar app.jar
+ ---> efb29e443ad3
+Step 4/4 : ENTRYPOINT ["java","-jar","app.jar"]
+ ---> Running in 81efca3e1de8
+Removing intermediate container 81efca3e1de8
+ ---> 73dc4832f738
+Successfully built 73dc4832f738
+Successfully tagged auth-course:12
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy Docker Image)
+[Pipeline] echo
+Docker Image Tag Name: auth-course12
+[Pipeline] sh
++ docker stop auth-course
+Error response from daemon: No such container: auth-course
++ true
+[Pipeline] sh
++ docker run --name auth-course --rm -d -p 8889:8889 auth-course:12
+f97a1c342cd8106eef66b43acfd86f8b638920d8e51a82b100aca1076d05e6e1
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

@@ -37,7 +37,7 @@ node {
 
 		  sh "docker stop auth-course || true"
 
-		  sh "docker run --name auth-course --rm -d -p 8888:8888 auth-course:${env.BUILD_NUMBER}"
+		  sh "docker run --name auth-course --rm -d -p 8889:8889 auth-course:${env.BUILD_NUMBER}"
 
 		  // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
 	      //    dockerImage.push("${env.BUILD_NUMBER}")

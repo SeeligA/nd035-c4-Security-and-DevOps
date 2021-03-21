@@ -29,3 +29,6 @@
 2021-03-13 17:59:47,314 INFO c.e.d.c.UserController [main] Creating user test
 2021-03-13 17:59:47,317 INFO c.e.d.c.UserController [main] Value of username is 
 2021-03-13 17:59:47,318 ERROR c.e.d.c.UserController [main] Error with password. Cannot create user test!
+2021-03-21 20:09:25,389 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on MACASE.fritz.box with PID 12154 (/Users/arndt/Documents/05Training/12jwd/04Security/eCommerce/target/classes started by arndt in /Users/arndt/Documents/05Training/12jwd/04Security/eCommerce)
+2021-03-21 20:09:25,414 DEBUG c.e.d.SareetaApplication [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2021-03-21 20:09:25,416 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
